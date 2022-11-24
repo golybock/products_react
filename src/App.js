@@ -27,7 +27,13 @@ class MainApp extends React.Component{
                         }}>Products</a>
                         <a className="Navbar-item" onClick={()=>{
 
-                        }}></a>
+                        }}>Customers</a>
+                        <a className="Navbar-item" onClick={()=>{
+
+                        }}>Orders</a>
+                        <a className="Navbar-item" onClick={()=>{
+
+                        }}>Brands</a>
                     </div>
                 </header>
                 <body>
