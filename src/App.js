@@ -1,25 +1,43 @@
 import logo from './logo.svg';
 import './App.css';
+import React from "react";
+import {Image} from "react-bootstrap";
+import Button from "react-bootstrap/Button";
+import ProductComponent from './components/ProductList';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class MainApp extends React.Component{
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            productPageActive:false
+        };
+    }
+
+    render() {
+        return (
+            <div className="App">
+                <header className="App-header">
+                    <div className="App-header-logo">
+                        <Image className="App-logo" src={logo}></Image>
+                    </div>
+                    <div className="Navigation">
+                        <a className="Navbar-item" onClick={()=>{
+                            this.setState({productPageActive:true})
+                        }}>Products</a>
+                        <a className="Navbar-item" onClick={()=>{
+
+                        }}></a>
+                    </div>
+                </header>
+                <body>
+                {
+                    this.state.productPageActive ? <ProductComponent/> : <h1>Пусто</h1>
+                }
+                </body>
+            </div>
+        );
+    }
 }
 
-export default App;
+export default MainApp;

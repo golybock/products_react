@@ -73,12 +73,13 @@ class ProductComponent extends React.Component{
                                 {this.state.products.map(pr => (
                                     <tr key={pr.id}>
                                         <td>{pr.name}</td>
-                                        <td>{pr.price}</td>
+                                        <td>{pr.currentPrice}</td>
                                         <td>
                                             <Image
-                                                src={pr.photoUrl !== "" ? pr.photoUrl : this.state.notFoundPhoto}
+                                                src={pr.productPhotos[0].photoPath !== "" ?
+                                                    pr.productPhotos[0].photoPath : this.state.notFoundPhoto}
                                                 width={50}
-                                               height={50}></Image>
+                                                height={50}></Image>
                                         </td>
                                         <td>{pr.categoryId}</td>
                                         <td>

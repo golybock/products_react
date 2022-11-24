@@ -3,7 +3,7 @@ class Api{
 
     // получения списка продуктов
     static getProducts(){
-        return fetch('https://localhost:44356/Products/GetProducts')
+        return fetch('https://localhost:44356/api/Products/GetProducts')
             .then((res) => { return res.json()
             });
     }

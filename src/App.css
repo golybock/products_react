@@ -3,8 +3,15 @@
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 10vmin;
   pointer-events: none;
+  horiz-align: left;
+}
+
+.App-header-logo{
+  horiz-align: left;
+  position: fixed;
+  left: 0;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -14,8 +21,8 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: rebeccapurple;
+  min-height: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,4 +42,9 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.Navbar-item{
+  text-decoration: none;
+  color: black;
 }
