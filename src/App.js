@@ -5,6 +5,7 @@ import {Image} from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import ProductComponent from './components/ProductList';
 
+
 class MainApp extends React.Component{
 
     constructor(props) {
@@ -19,7 +20,7 @@ class MainApp extends React.Component{
             <div className="App">
                 <header className="App-header">
                     <div className="App-header-logo">
-                        <Image className="App-logo" src={logo}></Image>
+                        <Image className="App-logo" src={logo}/>
                     </div>
                     <div className="Navigation">
                         <a className="Navbar-item" onClick={()=>{

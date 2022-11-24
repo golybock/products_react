@@ -29,7 +29,6 @@ class Api{
                     'accept': '*/*',
                     'Content-Type': 'application/json'
                 },
-                // body: '{\n  "id": 0,\n  "name": "czxczc",\n  "price": 1,\n  "photoUrl": "string",\n  "categoryId": 1\n}',
                 body: JSON.stringify(product)
             }).then(res => {return res.status});
         }
@@ -46,7 +45,6 @@ class Api{
                     'accept': '*/*',
                     'Content-Type': 'application/json'
                 },
-                // body: '{\n  "id": 0,\n  "name": "string",\n  "price": 0,0\n  "photoUrl": "string",\n  "categoryId": 0\n}',
                 body: JSON.stringify(product)
             }).then(res => {return res.status});
         }
@@ -55,7 +53,7 @@ class Api{
     }
 
     static getCategories(){
-        return fetch('https://localhost:44356/Products/GetCategories')
+        return fetch('https://localhost:44356/api/Products/GetCategories')
             .then((res) => { return res.json()
             });
     }

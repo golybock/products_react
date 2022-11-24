@@ -78,10 +78,10 @@ class ProductComponent extends React.Component{
                                             <Image
                                                 src={pr.productPhotos[0].photoPath !== "" ?
                                                     pr.productPhotos[0].photoPath : this.state.notFoundPhoto}
-                                                width={50}
-                                                height={50}></Image>
+                                                width={100}
+                                                height={100}/>
                                         </td>
-                                        <td>{pr.categoryId}</td>
+                                        <td>{pr.category.name}</td>
                                         <td>
                                             <Button variant="secondary" className="EditProduct"
                                                     onClick={() => {
