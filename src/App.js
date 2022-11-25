@@ -1,10 +1,38 @@
 import logo from './logo.svg';
+import person from './person.svg';
 import './App.css';
 import React from "react";
+import {
+    BrowserRouter as Router,
+    Routes,
+    Route,
+    Link,
+} from 'react-router-dom';
+import ProductList from "./components/ProductList";
 import {Image} from "react-bootstrap";
-import Button from "react-bootstrap/Button";
-import ProductComponent from './components/ProductList';
 
+const Home = () => <h2>Главная</h2>;
+
+const Orders = () => <h2>Заказы</h2>;
+
+const Customers = () => <h2>Продавцы</h2>;
+
+const Profile = () => <h2>Профиль</h2>;
+
+function Nav(){
+    return <nav>
+        <div className="Nav-panel">
+            <Image src={logo} className="App-logo"></Image>
+            <Link className="Navbar-item" to="/">Главная</Link>
+            <Link className="Navbar-item" to="/orders">Заказы</Link>
+            <Link className="Navbar-item" to="/products">Товары</Link>
+            <Link className="Navbar-item" to="/customers">Продавцы</Link>
+            <Link className="Navbar-item" to="/profile">
+                <Image src={person} className="Navbar-item"/>
+            </Link>
+        </div>
+    </nav>;
+}
 
 class MainApp extends React.Component{
 
@@ -17,32 +45,18 @@ class MainApp extends React.Component{
 
     render() {
         return (
-            <div className="App">
-                <header className="App-header">
-                    <div className="App-header-logo">
-                        <Image className="App-logo" src={logo}/>
-                    </div>
-                    <div className="Navigation">
-                        <a className="Navbar-item" onClick={()=>{
-                            this.setState({productPageActive:true})
-                        }}>Products</a>
-                        <a className="Navbar-item" onClick={()=>{
-
-                        }}>Customers</a>
-                        <a className="Navbar-item" onClick={()=>{
-
-                        }}>Orders</a>
-                        <a className="Navbar-item" onClick={()=>{
-
-                        }}>Brands</a>
-                    </div>
-                </header>
-                <body>
-                {
-                    this.state.productPageActive ? <ProductComponent/> : <h1>Пусто</h1>
-                }
-                </body>
-            </div>
+            <Router>
+                <div>
+                    <Nav />
+                    <Routes>
+                        <Route path="/" element={<Home />} />
+                        <Route path="/orders" element={ <Orders />} />
+                        <Route path="/products" element={<ProductList />} />
+                        <Route path="/customers" element={<Customers/>}/>
+                        <Route path="/profile" element={<Profile/>}/>
+                    </Routes>
+                </div>
+            </Router>
         );
     }
 }

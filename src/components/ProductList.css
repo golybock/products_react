@@ -1,0 +1,5 @@
+.Card-item{
+    border: 0.3vmin outset black;
+    border-radius: 12px;
+    outline-offset: 0.5rem;
+}
