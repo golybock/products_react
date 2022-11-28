@@ -1,5 +1,5 @@
-import logo from './logo.svg';
-import person from './person.svg';
+import logo from './res/logo.svg';
+import person from './res/person.svg';
 import './App.css';
 import React from "react";
 import {
@@ -10,6 +10,8 @@ import {
 } from 'react-router-dom';
 import ProductList from "./components/ProductList";
 import {Image} from "react-bootstrap";
+import Client from "./Models/Client/Client";
+import Login from "./components/Login/Login";
 
 const Home = () => <h2>Главная</h2>;
 
@@ -19,6 +21,8 @@ const Customers = () => <h2>Продавцы</h2>;
 
 const Profile = () => <h2>Профиль</h2>;
 
+let client = new Client(0, "email", "12345678", "client", "client", "123456", "pass", "dffg");
+
 function Nav(){
     return <nav>
         <div className="Nav-panel">
@@ -27,8 +31,9 @@ function Nav(){
             <Link className="Navbar-item" to="/orders">Заказы</Link>
             <Link className="Navbar-item" to="/products">Товары</Link>
             <Link className="Navbar-item" to="/customers">Продавцы</Link>
-            <Link className="Navbar-item" to="/profile">
+            <Link className="Navbar-item" to={client.id === 0 ? "/login" : "/profile" }>
                 <Image src={person} className="Navbar-item"/>
+                <h6 className="Navbar-item">{client.id === 0 ? "Войти" : client.firstName}</h6>
             </Link>
         </div>
     </nav>;
@@ -54,6 +59,7 @@ class MainApp extends React.Component{
                         <Route path="/products" element={<ProductList />} />
                         <Route path="/customers" element={<Customers/>}/>
                         <Route path="/profile" element={<Profile/>}/>
+                        <Route path="/login" element={<Login/>}/>
                     </Routes>
                 </div>
             </Router>

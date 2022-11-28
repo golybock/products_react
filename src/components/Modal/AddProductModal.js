@@ -1,7 +1,7 @@
 import React from "react";
 import "./AddProductModal.css"
 import Product from "../../Models/Product/Product"
-import Api from "../../Api"
+import Api from "../../Api/Api"
 import {CloseButton, Modal, Button, FormSelect, InputGroup} from "react-bootstrap";
 
 

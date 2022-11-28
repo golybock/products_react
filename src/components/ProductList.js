@@ -3,7 +3,7 @@ import ModalProduct from "./Modal/AddProductModal";
 import './ProductList.css';
 import Button from "react-bootstrap/Button";
 import 'bootstrap/dist/css/bootstrap.css';
-import Api from "../Api";
+import Api from "../Api/Api";
 import {Image} from "react-bootstrap";
 
 

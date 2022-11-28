@@ -46,6 +46,7 @@
 
 .Navbar-item{
   text-decoration: none;
+  horiz-align: center;
   color: black;
   margin-left: 20px;
   cursor: pointer;
